@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // CORS configuration
 app.use(cors({
-  origin: 'http://localhost:3000', // Replace with your frontend URL
+  origin: 'https://mern-project-de79b.web.app', // Replace with your frontend URL
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
 }));
@@ -56,7 +56,7 @@ mongoose.connect(
   `mongodb+srv://lejla:lejla2003doric@cluster0.frey9wn.mongodb.net/mern?retryWrites=true&w=majority&appName=Cluster0`
 )
 .then(() => {
-  app.listen(port, () => {
+  app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${port}`);
   });
 })

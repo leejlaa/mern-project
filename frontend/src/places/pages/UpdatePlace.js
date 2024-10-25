@@ -40,7 +40,7 @@ const UpdatePlace = () => {
     const fetchPlace = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5001/api/places/${placeId}`
+          `https://mern-app-lejla-7cd358c132ae.herokuapp.com/api/places/${placeId}`
         );
         setLoadedPlace(responseData.place);
         setFormData(
@@ -65,7 +65,7 @@ const UpdatePlace = () => {
     event.preventDefault();
     try {
       await sendRequest(
-        `http://localhost:5001/api/places/${placeId}`,
+        `https://mern-app-lejla-7cd358c132ae.herokuapp.com/api/places/${placeId}`,
         'PATCH',
         JSON.stringify({
           title: formState.inputs.title.value,

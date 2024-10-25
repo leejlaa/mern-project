@@ -70,7 +70,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          'http://localhost:5001/api/users/login',
+          'https://mern-app-lejla-7cd358c132ae.herokuapp.com/api/users/login',
           'POST',
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -90,7 +90,7 @@ const Auth = () => {
         formData.append('password', formState.inputs.password.value);
         formData.append('image', formState.inputs.image.value);
         const responseData = await sendRequest(
-          'http://localhost:5001/api/users/signup',
+          'https://mern-app-lejla-7cd358c132ae.herokuapp.com/api/users/signup',
           'POST',
           formData
         );
